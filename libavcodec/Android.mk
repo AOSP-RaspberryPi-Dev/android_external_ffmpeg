@@ -31,7 +31,7 @@ LOCAL_C_INCLUDES += external/dav1d/include
 LOCAL_SHARED_LIBRARIES += libdav1d
 endif
 
-ifneq ($(ARCH_ARM_HAVE_NEON),)
+ifeq ($(HAVE_INTRINSICS_NEON),yes)
 LOCAL_SRC_FILES += neon/mpegvideo.c
 endif
 
@@ -61,7 +61,7 @@ LOCAL_C_INCLUDES += external/dav1d/include
 LOCAL_SHARED_LIBRARIES += libdav1d
 endif
 
-ifneq ($(ARCH_ARM_HAVE_NEON),)
+ifeq ($(HAVE_INTRINSICS_NEON),yes)
 LOCAL_SRC_FILES += neon/mpegvideo.c
 endif
 
